@@ -7,10 +7,16 @@ function(){
 /* xlsx.js (C) 2013-2014 SheetJS -- http://sheetjs.com */
 /* uncomment the next line for encoding support */
 //importScripts('dist/cpexcel.js');
-importScripts('https://pulipulichen.github.io/HTML5-Spreadsheet-to-Solr-XML/jszip.js');
-importScripts('https://pulipulichen.github.io/HTML5-Spreadsheet-to-Solr-XML/xlsx.js');
+try {
+    importScripts('https://pulipulichen.github.io/HTML5-Spreadsheet-to-Solr-XML/jszip.js');
+} catch (e) {}
+try {
+    importScripts('https://pulipulichen.github.io/HTML5-Spreadsheet-to-Solr-XML/xlsx.js');
+} catch (e) {}
 /* uncomment the next line for ODS support */
-importScripts('https://pulipulichen.github.io/HTML5-Spreadsheet-to-Solr-XML/ods.js');
+try {
+    importScripts('https://pulipulichen.github.io/HTML5-Spreadsheet-to-Solr-XML/ods.js');
+} catch (e) {}
 postMessage({t:"ready"});
 
 function ab2str(data) {
